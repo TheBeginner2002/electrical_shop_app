@@ -1,28 +1,49 @@
 <mat-toolbar class="toolbar">
-  <button mat-icon-button>
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <span>My App</span>
-  <button mat-icon-button>
-    Trang chủ
-  </button>
-  <button mat-icon-button>
-    Sản phẩm
-  </button>
-  <button mat-icon-button>
-    Về chúng tôi
-  </button>
-  <button mat-icon-button>
-    Liên hệ
-  </button>
+  <span class="logo">My App</span>
+  <span class="gap">
+    <a href="#">
+      Trang chủ
+    </a>
+  </span>
+  <span class="gap">
+    <a href="#">
+      Sản phẩm
+    </a>
+  </span>
+  <span class="gap">
+    <a href="#">
+      Về chúng tôi
+    </a>
+  </span>
+  <span class="gap">
+    <a href="#">
+      Liên hệ
+    </a>
+  </span>
   <span class="spacer"></span>
-  <button mat-icon-button>
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-  <button mat-icon-button>
-    <i class="fa-solid fa-share"></i>
+
+  <form class="form">
+      <input matInput placeholder="Search">
+    <button>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+
+  <button mat-icon-button class="button" >
+    <i class="fa-solid fa-cart-shopping"></i>
   </button>
 </mat-toolbar>
 
-<p>main-page works!</p>
+<div class="carousel">
+  <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === activeSlideIndex">
+    <img [src]="image">
+    {{ i === activeSlideIndex }}
+  </div>
+  <button class="prev" (click)="movePrev()">&lt;</button>
+  <button class="next" (click)="moveNext()">&gt;</button>
+</div>
+
+<div *ngFor="let image_item of images">
+  <img [src]="image_item">
+</div>
 

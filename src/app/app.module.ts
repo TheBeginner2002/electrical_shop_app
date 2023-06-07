@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
@@ -21,7 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
