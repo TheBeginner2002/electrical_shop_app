@@ -7,7 +7,9 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule} from '@angular/material/button';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImageSliderModule } from './components/image-slider/image-slider.module';
 
 
 @NgModule({
@@ -23,6 +25,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     MatButtonModule,
     FontAwesomeModule,
     MatFormFieldModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
