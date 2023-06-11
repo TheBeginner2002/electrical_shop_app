@@ -10,12 +10,14 @@ import { MatButtonModule} from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImageSliderModule } from './components/image-slider/image-slider.module';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,

@@ -43,9 +43,35 @@
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: baseline;
   align-content: center;
+  align-items: center;
 }
+
+.text-container{
+  margin-top: 220px;
+}
+
+.btn-buy-now{
+  margin: 10px;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  border: black 1px solid;
+  text-align: center;
+  background-color: white;
+}
+
+.btn-add-cart{
+  margin: 10px;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+
 
