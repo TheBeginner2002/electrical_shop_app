@@ -11,13 +11,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImageSliderModule } from './components/image-slider/image-slider.module';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { MatCardModule } from '@angular/material/card';
+import { CardModule } from './components/card/card.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,10 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     MatFormFieldModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ImageSliderModule
+    ImageSliderModule,
+    ToolbarModule,
+    MatCardModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

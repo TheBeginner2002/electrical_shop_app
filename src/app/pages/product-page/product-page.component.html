@@ -1,1 +1,8 @@
-<p>product-page works!</p>
+<app-toolbar></app-toolbar>
+
+<div class="product-container">
+  <app-card *ngFor="let product of products" [img]="product.img" [title]="product.title" [subTitle]="product.subTitle" [price]="product.price"></app-card>
+</div>
+
+
+  
