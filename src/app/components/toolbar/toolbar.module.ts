@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -18,9 +19,10 @@ import { MatButtonModule } from '@angular/material/button';
     FontAwesomeModule,
     MatIconModule,
     MatButtonModule,
+    AppRoutingModule
   ],
   exports: [
     ToolbarComponent,
-  ],  
+  ],
 })
 export class ToolbarModule { }
