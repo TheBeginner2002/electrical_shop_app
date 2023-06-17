@@ -1,26 +1,39 @@
 <mat-toolbar class="toolbar">
     <span class="logo">
-      <img src="../../../assets/logo.png" alt="logo">
+      <img src="../../../assets/logo.png" alt="logo" routerLink="/">
     </span>
-    <span class="gap">
-      <a href="#">
+    <span>
+      <div class="vl"></div>
+    </span>
+    <span class="title" *ngIf="isSimpleToolbar">
+      {{ title }}
+    </span>
+    <span *ngIf="!isSimpleToolbar" class="gap">
+      <button class="button-title" routerLink="/">
         Trang chủ
-      </a>
+      </button>
     </span>
-    <span class="gap">
-      <a href="/product">
-        Sản phẩm
-      </a>
+    <span *ngIf="!isSimpleToolbar" class="gap">
+      <div class="dropdown-btn">
+        <button type="menu" class="button-title" routerLink="/product">
+          Sản phẩm
+        </button>
+        <div class="dropdown-menu">
+          <a href="/product">TV</a>
+          <a href="#">Tủ Lạnh</a>
+          <a href="#">Máy Giặt</a>
+        </div>
+      </div>
     </span>
-    <span class="gap">
-      <a href="#">
+    <span *ngIf="!isSimpleToolbar" class="gap">
+      <button class="button-title" routerLink="#">
         Về chúng tôi
-      </a>
+      </button>
     </span>
-    <span class="gap">
-      <a href="#">
+    <span *ngIf="!isSimpleToolbar" class="gap">
+      <button class="button-title" routerLink="#">
         Liên hệ
-      </a>
+      </button>
     </span>
     <span class="spacer"></span>
   
@@ -31,7 +44,7 @@
       </button>
     </form>
   
-    <button mat-icon-button class="button" routerLink="/cart">
+    <button *ngIf="!isSimpleToolbar" mat-icon-button class="button" routerLink="/cart">
       <i class="fa-solid fa-cart-shopping"></i>
     </button>
   </mat-toolbar>

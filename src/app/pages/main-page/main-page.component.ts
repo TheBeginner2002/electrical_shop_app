@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageModel } from 'src/app/model/image-model';
+import { ProductModel } from 'src/app/model/product-model';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,14 +8,26 @@ import { ImageModel } from 'src/app/model/image-model';
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent {
+  products: ProductModel[] = [];
+
+  constructor(
+    private appService: AppService
+  ) { }
+
+  title:string | undefined;
+  subTitle:string | undefined;
   activeSlideIndex = 0;
-  images: ImageModel[] = [
-    {url:'https://via.placeholder.com/650x500?text=Slide+1',title: 'Slide 1'},
-    {url:'https://via.placeholder.com/650x500?text=Slide+2',title: 'Slide 2'},
-    {url:'https://via.placeholder.com/650x500?text=Slide+3',title: 'Slide 3'},
-  ];
+  
+
+  changeTitle(index:number): void {
+    this.title = this.products[index]?.title;
+    this.subTitle = this.products[index]?.subTitle;
+  }
 
   ngOnInit() {
+    this.products = this.appService.getProducts();
+    this.title = this.products[0]?.title;
+    this.subTitle = this.products[0]?.subTitle;
   }
 
 }

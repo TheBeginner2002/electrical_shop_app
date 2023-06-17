@@ -1,16 +1,15 @@
-
 <app-toolbar></app-toolbar>
 
 <div class="container">
   <div class="text-container">
-    <h1>Google TV</h1>
-    <p>Google TV is a new entertainment experience that combines the TV you know and love with the freedom and power of the Internet.</p>
+    <h1>{{ title }}</h1>
+    <p>{{ subTitle }}</p>
     <div>
       <button class="btn-buy-now">Mua ngay</button>
       <button class="btn-add-cart">Thêm vào giỏ</button>
     </div>
   </div>
-  <app-image-slider [images]="images"></app-image-slider>
+  <app-image-slider (changeTitle)="changeTitle($event)" [products]="products"></app-image-slider>
 </div>
 
 

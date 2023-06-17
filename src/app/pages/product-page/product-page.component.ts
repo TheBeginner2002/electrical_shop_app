@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductModel } from 'src/app/model/product-model';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-product-page',
@@ -7,14 +9,13 @@ import { Component } from '@angular/core';
 })
 export class ProductPageComponent {
 
-  constructor() { }
+  constructor(
+    private appService: AppService
+  ) { }
 
-  products = [
-    {img: '../../../assets/TV1.png', title: 'Super TV', subTitle: '4k Ultra HD 57"', price: 49999000},
-    {img: '../../../assets/TV2.png', title: 'Sakura TV', subTitle: '5k HDR 56"', price: 59999000},
-    {img: '../../../assets/TV3.png', title: 'Google TV', subTitle: '4k Ultra HD 55"', price: 67999000},
-    {img: '../../../assets/TV1.png', title: 'Super TV', subTitle: '4k Ultra HD 57"', price: 49999000},
-    {img: '../../../assets/TV2.png', title: 'Sakura TV', subTitle: '5k HDR 56"', price: 59999000},
-    {img: '../../../assets/TV3.png', title: 'Google TV', subTitle: '4k Ultra HD 55"', price: 67999000},
-  ];
+  products: ProductModel[] = [];
+
+  ngOnInit(): void {
+    this.products = this.appService.getProducts();
+  }
 }

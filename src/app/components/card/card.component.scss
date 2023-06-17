@@ -15,11 +15,27 @@
     &.buy-now {
         border: black 1px solid;
         background-color: white;
+
+        &:hover {
+            background-color: lightgray;
+        }
+
+        &:active {
+            background-color: gray;
+        }
     }
 
     &.add-cart {
         background-color: black;
         color: white;
+
+        &:hover {
+            background-color: gray;
+        }
+
+        &:active {
+            background-color: darkgray;
+        }
     }
 }
 

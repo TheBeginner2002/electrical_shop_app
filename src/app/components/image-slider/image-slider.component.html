@@ -1,9 +1,9 @@
-<div *ngIf="images && images.length > 0" class="carousel-container">
-    <img *ngFor="let image of images; let i = index" [src]="image.url" [alt]="image.title"
+<div *ngIf="products && products.length > 0" class="carousel-container">
+    <img *ngFor="let product of products; let i = index" [src]="product.img" [alt]="product.alt"
         [ngClass]="{'image-active': currentSlideIndex === i}" class="slide">
 
     <div *ngIf="showDot" class="carousel-dot-container">
-        <span *ngFor="let dot of images; let i = index" class="dot"
+        <span *ngFor="let dot of products; let i = index" class="dot"
             [ngClass]="{'active': currentSlideIndex == i}"
             (click)="goToSlide(i)">
         </span>

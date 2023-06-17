@@ -8,6 +8,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { CardModule } from './components/card/card.module';
+import { CartCardModule } from './components/cart-card/cart-card.module';
+import { InfoRegistrationPageComponent } from './pages/info-registration-page/info-registration-page.component';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { CardModule } from './components/card/card.module';
     MainPageComponent,
     ProductPageComponent,
     CartPageComponent,
+    InfoRegistrationPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ImageSliderModule,
     ToolbarModule,
-    CardModule
+    CardModule,
+    CartCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

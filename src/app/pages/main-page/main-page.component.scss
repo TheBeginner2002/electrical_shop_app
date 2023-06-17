@@ -61,6 +61,14 @@
   border: black 1px solid;
   text-align: center;
   background-color: white;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  &:active {
+    background-color: gray;
+  }
 }
 
 .btn-add-cart{
@@ -71,6 +79,14 @@
   text-align: center;
   background-color: black;
   color: white;
+
+  &:hover {
+    background-color: gray;
+  }
+
+  &:active {
+    background-color: darkgray;
+  }
 }
 
 

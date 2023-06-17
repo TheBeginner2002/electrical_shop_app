@@ -1,1 +1,26 @@
-<p>cart-page works!</p>
+<app-toolbar [isSimpleToolbar]="true" [title]="'Giỏ Hàng'"></app-toolbar>
+
+<div class="cart-container" *ngIf="cartProducts">
+    <app-cart-card *ngFor="let product of cartProducts" 
+        [cartProduct]="product"
+        (productSelected)="onProductSelected($event.product, $event.selected)"
+        ></app-cart-card>
+</div> 
+<div class="btn-container">
+    <button 
+        class="btn buy" 
+        [disabled]="!selectedProducts.length" 
+        (click)="goToPurchasePage()" 
+        [disabled]="!selectedProducts.length" 
+        [ngClass]="{'no-hover': !selectedProducts.length}">
+        Mua Ngay
+    </button> 
+    <button 
+        class="btn delete" 
+        [disabled]="!selectedProducts.length" 
+        (click)="removeSelectedFromCart()" 
+        [disabled]="!selectedProducts.length" 
+        [ngClass]="{'no-hover': !selectedProducts.length}">
+        Xoá
+    </button> 
+</div>

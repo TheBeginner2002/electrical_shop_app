@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.container img {
+    width: 120px;
+    height: 100px;
+}
+
+.vl {
+    border-left: 1px solid rgba(133, 133, 133, 0.801);
+    height: 65px;
+}
+
+.number-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.number-input {
+    width: 50px;
+    height: 15px;
+    text-align: center;
+}
+  
+.decrease-button,
+.increase-button {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+  
+.decrease-button:hover,
+.increase-button:hover {
+    background-color: #aaa;
+}
+
+.checkbox-section {
+    margin: 12px 0;
+}
+  
+.checkbox-margin {
+    margin: 0 12px;
+}

@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() title:string = '';
+  @Input() isSimpleToolbar:boolean = false;
 
 }

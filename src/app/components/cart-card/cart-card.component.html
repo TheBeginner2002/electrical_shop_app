@@ -1,0 +1,26 @@
+<div class="container">
+    <img [src]="cartProduct.img">
+
+    <div class="vl"></div>
+
+    <p><b>{{ cartProduct.title }}</b></p>
+
+    <div class="vl"></div>
+
+    <p>{{ cartProduct.price }}đ</p>
+
+    <div class="vl"></div>
+
+    <div class="number-selector">
+        <button class="decrease-button" (click)="decrement()">-</button>
+        <input type="number" class="number-input" [value]="numVal" readonly>
+        <button class="increase-button" (click)="increment()">+</button>
+    </div>
+
+    <div class="vl"></div>
+
+    <section class="checkbox-section">
+        <mat-checkbox class="checkbox-margin" [checked]="selected" (change)="onCheckboxChange($event)"></mat-checkbox>
+    </section>
+
+</div>
