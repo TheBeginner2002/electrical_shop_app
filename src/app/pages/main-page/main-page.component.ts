@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { PopupComponent } from 'src/app/components/popup/popup.component';
 import { ProductModel } from 'src/app/model/product-model';
 import { AppService } from 'src/app/services/app.service';
 
@@ -11,7 +14,9 @@ export class MainPageComponent {
   products: ProductModel[] = [];
 
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private router: Router,
+    private dialog: MatDialog,
   ) { }
 
   title:string | undefined;
@@ -30,4 +35,22 @@ export class MainPageComponent {
     this.subTitle = this.products[0]?.subTitle;
   }
 
+  addToCart() {
+    this.appService.addCart(this.products[this.activeSlideIndex]);
+    this.popupMessage();
+  }
+
+  buyNow() {
+    this.appService.addCart(this.products[this.activeSlideIndex]);
+    this.popupMessage();
+    this.router.navigate(['/cart']);
+  }
+
+  popupMessage() {
+    const dialogRef = this.dialog.open(PopupComponent, {
+      width: '300px',
+      height: '150px',
+      position: { top: '-1400px', left: '1800px' }
+    });
+  }
 }

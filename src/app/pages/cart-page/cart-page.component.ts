@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BuyingProductModel } from 'src/app/model/buying-product-model';
 import { ProductModel } from 'src/app/model/product-model';
 import { AppService } from 'src/app/services/app.service';
 
@@ -10,7 +11,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class CartPageComponent {
   cartProducts:ProductModel[] = [];
-  selectedProducts: ProductModel[] = [];
+  selectedProducts: BuyingProductModel[] = [];
 
   constructor(
     private appService: AppService,
@@ -22,26 +23,31 @@ export class CartPageComponent {
   }
 
   removeSelectedFromCart() {
-    // this.cartProducts = this.cartProducts.filter(p => !this.selectedProducts.includes(p));
-    // this.appService.updateCartProducts(this.cartProducts);
-    // this.selectedProducts = [];
-    this.cartProducts = this.cartProducts.filter(product => !this.selectedProducts.includes(product));
+    this.cartProducts = this.cartProducts.filter(product => !this.selectedProducts.map(selectedProduct => selectedProduct.product).includes(product));
     this.appService.updateCartProducts(this.cartProducts);
     this.selectedProducts = [];
   }
 
-  onProductSelected(product: ProductModel, selected: boolean) {
+  onProductSelected(product: ProductModel, selected: boolean, quantity: number) {
     if (selected) {
-      this.selectedProducts.push(product); // Add the selected product to the selectedProducts array
+      let temp:BuyingProductModel = { product: product, quantity: quantity } as BuyingProductModel;
+      this.selectedProducts.push(temp);
     } else {
-      const index = this.selectedProducts.indexOf(product);
+      let temp:BuyingProductModel = { product: product, quantity: quantity } as BuyingProductModel;
+      const index = this.selectedProducts.indexOf(temp);
       if (index !== -1) {
-        this.selectedProducts.splice(index, 1); // Remove the deselected product from the selectedProducts array
+        this.selectedProducts.splice(index, 1); 
       }
     }
   }
 
   goToPurchasePage() {
-    this.router.navigate(['/purchase'], { state: { selectedProducts: this.selectedProducts } }); // Navigate to the purchase page and pass the selectedProducts array as state
+    const data = { selectedProducts: this.selectedProducts }
+    const queryParams = { data: JSON.stringify(data) }
+    this.router.navigate(['/purchase'], { queryParams });
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 }

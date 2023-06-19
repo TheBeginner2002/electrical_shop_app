@@ -11,7 +11,7 @@ export class CartCardComponent {
 
   numVal:number = 1;
   @Input() cartProduct: ProductModel = {} as ProductModel;
-  @Output() productSelected = new EventEmitter<{ product: ProductModel, selected: boolean }>();
+  @Output() productSelected = new EventEmitter<{ product: ProductModel, selected: boolean,quantity:number }>();
   selected: boolean = false;
 
   constructor(
@@ -32,7 +32,7 @@ export class CartCardComponent {
 
   onCheckboxChange(event: any) {
     this.selected = event.checked; 
-    this.productSelected.emit({ product: this.cartProduct, selected: this.selected });
+    this.productSelected.emit({ product: this.cartProduct, selected: this.selected, quantity: this.numVal});
   }
   
 }

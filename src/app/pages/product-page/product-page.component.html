@@ -1,8 +1,10 @@
 <app-toolbar></app-toolbar>
 
 <div class="product-container">
-  <app-card *ngFor="let product of products" [product]="product"></app-card>
+  <app-card *ngFor="let product of products" [product]="product" (popupMessage)="popupMessage()"></app-card>
 </div>
+
+<!-- <button (click)="popupMessage()">Test</button> -->
 
 
   

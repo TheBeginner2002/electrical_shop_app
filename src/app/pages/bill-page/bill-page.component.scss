@@ -1,0 +1,96 @@
+.sucess-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.create-bill-button{
+    margin: 10px;
+    font-size: 20px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    &:hover {
+        background-color: gray;
+    }
+
+    &:active {
+        background-color: darkgray;
+    }
+}
+
+.bill-container{
+    // display: flex;
+    // flex-direction: column;
+    text-align: center;
+    // align-items: center;
+    margin-top: 100px;
+    
+}
+
+.vl {
+    border-left: 1px solid black;
+    height: 65px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 630px;
+    margin-right: 630px;
+
+}
+
+.spacer {
+    flex: 0.2 1 auto;
+}
+
+.spacer-info {
+    flex: 0.9 1 auto;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.info-product{
+    width: 600px;
+    margin-left: 20px;
+}
+
+.info{
+    text-align: left;
+}
+
+.personal-info-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 630px;
+    margin-right: 630px;
+    
+}

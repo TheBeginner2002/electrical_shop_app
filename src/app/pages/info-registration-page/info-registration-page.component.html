@@ -1,7 +1,85 @@
 <app-toolbar></app-toolbar>
 
 <div class="container">
-    <div class="card-product">
-        
-    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="card-product" *ngFor="let selectedProduct of selectedProducts; let i = index">
+            <img [src]="selectedProduct.product.img">
+            <div>
+                <h1>{{ selectedProduct.product.title }}</h1>
+                <div></div>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                <p>{{ selectedProduct.product.price | currency: 'VND':'symbol':'1.0-0' }}</p>
+                <div class="number-selector">
+                    <button class="decrease-button" (click)="decrement(selectedProduct.quantity,i)">-</button>
+                    <input type="number" class="number-input" [value]="selectedProduct.quantity" readonly>
+                    <button class="increase-button" (click)="increment(selectedProduct.quantity,i)">+</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="register">
+            <div>
+                <p>Thông tin người mua:</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" style="height: 20px;" id="name">
+                            <mat-label>Họ và tên</mat-label>
+                            <input matInput type="text" formControlName="name">
+                        </mat-form-field>
+                    </div>
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" id="phoneNumber">
+                            <mat-label>Số điện thoại</mat-label>
+                            <input matInput type="text" formControlName="phoneNumber">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>Địa chỉ người mua:</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" id="addressProvince">
+                            <mat-label>Tỉnh/Thành phố</mat-label>
+                            <input matInput type="text" formControlName="addressProvince">
+                        </mat-form-field>
+                    </div>
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" id="addressDistrict">
+                            <mat-label>Quận/Huyện</mat-label>
+                            <input matInput type="text" formControlName="addressDistrict">
+                        </mat-form-field>
+                    </div>
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" id="addressCommune">
+                            <mat-label>Xã/Phường</mat-label>
+                            <input matInput type="text" formControlName="addressCommune">
+                        </mat-form-field>
+                    </div>
+                    <div class="grid-item">
+                        <mat-form-field appearance="outline" id="addressNumber">
+                            <mat-label>Số nhà</mat-label>
+                            <input matInput type="text" formControlName="addressNumber">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="note" id="note">
+                    <mat-label>Ghi chú...</mat-label>
+                    <input matInput type="text" formControlName="note">
+                </mat-form-field>
+            </div>
+        </div>
+        <hr>
+        <div class="card-product">
+            <p>Tổng tiền:</p>
+            <div class="spacer"></div>
+            <p>{{ totalPrice | currency: 'VND':'symbol':'1.0-0' }}</p>                        
+        </div>
+
+        <button class="button-buy" type="submit">Đặt hàng</button>
+    </form>
 </div>

@@ -10,7 +10,14 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { CardModule } from './components/card/card.module';
 import { CartCardModule } from './components/cart-card/cart-card.module';
 import { InfoRegistrationPageComponent } from './pages/info-registration-page/info-registration-page.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PopupModule } from './components/popup/popup.module';
+import { BillPageComponent } from './pages/bill-page/bill-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,7 @@ import { InfoRegistrationPageComponent } from './pages/info-registration-page/in
     ProductPageComponent,
     CartPageComponent,
     InfoRegistrationPageComponent,
+    BillPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,15 @@ import { InfoRegistrationPageComponent } from './pages/info-registration-page/in
     ImageSliderModule,
     ToolbarModule,
     CardModule,
-    CartCardModule
+    CartCardModule,
+    MatInputModule,
+    FormsModule, 
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    PopupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

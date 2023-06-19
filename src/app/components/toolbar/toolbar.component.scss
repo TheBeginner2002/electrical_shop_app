@@ -1,6 +1,6 @@
 .spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
   
 .toolbar{
   display: flex;
@@ -46,7 +46,6 @@
 
 .button-title{
   display: inline-block;
-  margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
   color: black;
@@ -59,33 +58,47 @@
   cursor: pointer;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: white;
+  margin-left: 10px;
+  color: black;
+  border: none;
+  font-size: medium;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .dropdown-menu {
   position: absolute;
   z-index: 1;
   display: none;
   background-color: white;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
-  margin-top: 5px;
-  left: 0;
-  top: 100%;
+  margin-top: 1px;
+  left: -16px;
+  top: 20px;
 }
 
 .dropdown-menu a {
   color: black;
-  display: block;
-  padding: 5px 0;
+  padding: 12px 16px;
   text-decoration: none;
+  display: block;
 }
 
-.dropdown-menu a:hover {
-  background-color: #f1f1f1;
-}
+.dropdown-menu a:hover {background-color: #ddd;}
 
-.dropdown-btn {
-  position: relative;
-  display: inline-block;
-}
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropdown-btn {background-color: #aaaaaa;}
 
 .title {
   font-size: 20px;

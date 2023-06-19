@@ -5,8 +5,8 @@
     <h1>{{ title }}</h1>
     <p>{{ subTitle }}</p>
     <div>
-      <button class="btn-buy-now">Mua ngay</button>
-      <button class="btn-add-cart">Thêm vào giỏ</button>
+      <button class="btn-buy-now" (click)="buyNow()">Mua ngay</button>
+      <button class="btn-add-cart" (click)="addToCart()">Thêm vào giỏ</button>
     </div>
   </div>
   <app-image-slider (changeTitle)="changeTitle($event)" [products]="products"></app-image-slider>
