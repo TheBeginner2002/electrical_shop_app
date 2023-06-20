@@ -55,7 +55,7 @@
 }
 
 .spacer-info {
-    flex: 0.9 1 auto;
+    flex: 1 1 auto;
 }
 
 .info-container {
@@ -70,6 +70,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.img-container img {
+    width: 150px;
+    height: 120px;
 }
 
 hr {
@@ -90,7 +95,7 @@ hr {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-left: 630px;
-    margin-right: 630px;
+    margin-left: 660px;
+    margin-right: 660px;
     
 }

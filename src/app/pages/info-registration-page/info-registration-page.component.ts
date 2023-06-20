@@ -82,7 +82,8 @@ export class InfoRegistrationPageComponent {
   }
 
   onSubmit() {
-    console.log(this.form.value);
-    this.router.navigate(['/bill']);
+    const data = { info: this.form.value, infoProducts: this.selectedProducts }
+    const queryParams = { data: JSON.stringify(data) }
+    this.router.navigate(['/bill'], { queryParams });
   }
 }

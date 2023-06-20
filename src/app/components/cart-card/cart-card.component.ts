@@ -22,11 +22,13 @@ export class CartCardComponent {
 
   increment() {
     this.numVal++;
+    this.productSelected.emit({ product: this.cartProduct, selected: this.selected, quantity: this.numVal});
   }
 
   decrement() {
     if(this.numVal > 0) {
       this.numVal--;
+      this.productSelected.emit({ product: this.cartProduct, selected: this.selected, quantity: this.numVal});
     }
   }
 

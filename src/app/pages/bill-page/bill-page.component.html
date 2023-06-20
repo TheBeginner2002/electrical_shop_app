@@ -8,9 +8,9 @@
 <div class="bill-container">
     <p><b>Cảm ơn vì đã mua hàng!<br> Chúng tôi sẽ xử lí đơn hàng của bạn ngay lập tức!</b></p>
     <hr>
-    <div class="product-container">
+    <div class="product-container" *ngFor="let soldProduct of products">
         <div class="img-container">
-            <img src="../../../assets/TV1.png">
+            <img [src]="soldProduct.product.img">
             <div class="vl"></div>
         </div>
         <div class="spacer"></div>
@@ -23,12 +23,12 @@
             <div class="info-container">
                 <p>Tên sản phẩm:</p>
                 <div class="spacer-info"></div>
-                <p class="info">SuperTV 4k</p>
+                <p class="info">{{ soldProduct.product.title }}</p>
             </div>
             <div class="info-container">
                 <p>Số lượng sản phẩm:</p>
                 <div class="spacer-info"></div>
-                <p class="info">1</p>
+                <p class="info">{{ soldProduct.quantity }}</p>
             </div>
         </div>
     </div>
@@ -37,22 +37,22 @@
         <div class="info-container">
             <p>Tổng tiền:</p>
             <div class="spacer-info"></div>
-            <p>49.999.000</p>
+            <p>{{ info.totalPrice }}</p>
         </div>
         <div class="info-container">
             <p>Ngày một đặt hàng:</p>
             <div class="spacer-info"></div>
-            <p>dd/mm/yy</p>
+            <p>{{ dateNow | date:'dd/MM/yy'}}</p>
         </div>
         <div class="info-container">
             <p>Thời gian dự kiến đặt hàng:</p>
             <div class="spacer-info"></div>
-            <p>dd/mm/yy</p>
+            <p>{{ getDateShipping() | date:'dd/MM/yy' }}</p>
         </div>
         <div class="info-container">
             <p>Thông tin người nhận:</p>
             <div class="spacer-info"></div>
-            <p>49.999.000</p>
+            <p>{{ getAddress() }}</p>
         </div>
     </div>
 
