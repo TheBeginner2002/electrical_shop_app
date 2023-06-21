@@ -26,11 +26,12 @@
     text-align: center;
     border: none;
     &.buy {
-        border: black 1px solid;
+        border: black 2cap solid;
         background-color: white;
 
         &:hover {
             background-color: lightgray;
+            cursor: pointer;
         }
 
         &:active {
@@ -41,9 +42,11 @@
     &.delete {
         background-color: black;
         color: white;
+        border: none;
 
         &:hover {
             background-color: gray;
+            cursor: pointer;
         }
 
         &:active {
@@ -88,8 +91,10 @@
     text-align: center;
     background-color: black;
     color: white;
+    border: none;
     &:hover {
         background-color: gray;
+        cursor: pointer;
     }
 
     &:active {
