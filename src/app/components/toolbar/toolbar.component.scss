@@ -31,6 +31,7 @@
   height: 40px;
   width: 200px;
   border: 2px solid black;
+  border-right: none;
 }
 
 .form button {
@@ -41,6 +42,14 @@
   color: white;
   background-color: black;
   border: none;
+
+  &:hover {
+    background-color: gray;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: darkgray;
+  }
 }
 
 .button {
