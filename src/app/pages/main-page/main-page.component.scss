@@ -1,44 +1,8 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-.toolbar{
+.supper-container {
   display: flex;
-}
-
-.gap {
-  margin: 10px;
-  padding: 20px;
-  font-size: 20px;
-}
-
-.logo {
-  margin: 10px;
-  padding: 20px;
-  font-size: 35px;
-}
-
-.form {
-  margin: 10px;
-  align-self: center;
-}
-
-.form input {
-  font-size: 20px;
-  height: 40px;
-  width: 200px;
-}
-
-.form button {
-  font-size: 20px;
-  height: 46px;
-  width: 50px;
-  padding: 10px;
-}
-
-.button {
-  margin: 10px;
-  padding: 20px !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
 }
 
 .container {
@@ -47,7 +11,6 @@
   // align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 800px;
 }
 
 .text-container{
@@ -101,7 +64,7 @@
   align-content: center;
   align-items: center;
   margin-top: 200px;
-  margin-left: 90px;
+  margin-left: 10px;
   row-gap: 50px;
   column-gap: 50px;
 }
@@ -109,6 +72,56 @@
 @media screen and (max-width: 1300px) {
   .product-container{
       grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .supper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+  }
+}
+
+@media screen and (min-height: 1060px) {
+  .supper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 900px;
+  }
+}
+
+@media screen and (min-height: 1180px) {
+  .supper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1000px;
+  }
+}
+
+.more-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.more-btn button {
+  color: black;
+  background-color: white;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  font-size: 20px;
+
+  &:hover {
+    background-color: lightgray;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: gray;
   }
 }
 

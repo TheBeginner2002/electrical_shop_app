@@ -13,7 +13,7 @@
     text-align: center;
 
     &.buy-now {
-        border: black 1px solid;
+        border: black 2px solid;
         background-color: white;
 
         &:hover {
@@ -28,6 +28,7 @@
     &.add-cart {
         background-color: black;
         color: white;
+        border: none;
 
         &:hover {
             background-color: gray;

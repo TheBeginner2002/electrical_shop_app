@@ -12,6 +12,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class MainPageComponent {
   products: ProductModel[] = [];
+  showProducts:boolean = false;
 
   constructor(
     private appService: AppService,
@@ -58,5 +59,9 @@ export class MainPageComponent {
       height: '150px',
       position: { top: '-1400px', left: '1800px' }
     });
+  }
+
+  clickShowProducts() {
+    this.showProducts = !this.showProducts;
   }
 }

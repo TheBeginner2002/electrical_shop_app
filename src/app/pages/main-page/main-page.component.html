@@ -1,17 +1,24 @@
 <app-toolbar></app-toolbar>
 
-<div class="container">
-  <div class="text-container">
-    <h1>{{ title }}</h1>
-    <p>{{ subTitle }}</p>
-    <div>
-      <button class="btn-buy-now" (click)="buyNow()">Mua ngay</button>
-      <button class="btn-add-cart" (click)="addToCart()">Thêm vào giỏ</button>
+<div class="supper-container">
+  <div class="container">
+    <div class="text-container">
+      <h1>{{ title }}</h1>
+      <p>{{ subTitle }}</p>
+      <div>
+        <button class="btn-buy-now" (click)="buyNow()">Mua ngay</button>
+        <button class="btn-add-cart" (click)="addToCart()">Thêm vào giỏ</button>
+      </div>
     </div>
+    <app-image-slider (changeTitle)="changeTitle($event)" [products]="products"></app-image-slider>
   </div>
-  <app-image-slider (changeTitle)="changeTitle($event)" [products]="products"></app-image-slider>
+  <div class="more-btn">
+    <button (click)="clickShowProducts()">Tìm hiểu thêm</button>
+  </div>
 </div>
 
-
+<div class="product-container" *ngIf="showProducts">
+  <app-card *ngFor="let product of products" [product]="product" (popupMessage)="popupMessage()"></app-card>
+</div>
 
 
