@@ -47,6 +47,12 @@ export class MainPageComponent {
   }
 
   popupMessage() {
+    // this.snackBar.open(message, 'Dismiss', {
+    //   duration: 5000,
+    //   verticalPosition: this.verticalPosition,
+    //   horizontalPosition: this.horizontalPosition
+    // });
+
     const dialogRef = this.dialog.open(PopupComponent, {
       width: '300px',
       height: '150px',

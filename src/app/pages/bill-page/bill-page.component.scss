@@ -16,6 +16,7 @@
     text-align: center;
     background-color: black;
     color: white;
+    border: none;
     &:hover {
         background-color: gray;
     }
@@ -47,7 +48,6 @@
     text-align: center;
     margin-left: 630px;
     margin-right: 630px;
-
 }
 
 .spacer {
@@ -97,6 +97,56 @@ hr {
     flex-direction: column;
     text-align: center;
     margin-left: 660px;
-    margin-right: 660px;
-    
+    margin-right: 660px;   
+}
+
+.back-btn {
+    margin: 10px;
+    font-size: 20px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 7%;
+    bottom: 8%;
+    border: none;
+    &:hover {
+        background-color: gray;
+    }
+
+    &:active {
+        background-color: darkgray;
+    }
+}
+
+@media screen and (max-width:1800px) {
+    hr {
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+
+    .info-product{
+        width: 400px;
+        margin-left: 20px;
+    }
+
+    .product-container {
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin-left: 430px;
+        margin-right: 430px;
+    }
+
+    .personal-info-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 460px;
+        margin-right: 460px;   
+    }
 }

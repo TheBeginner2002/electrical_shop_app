@@ -3,12 +3,14 @@
         [ngClass]="{'image-active': currentSlideIndex === i}" class="slide">
 
     <div *ngIf="showDot" class="carousel-dot-container">
+        <button class="arrow leftArrow" (click)="goToPreviousSlide()">&lt;</button>
         <span *ngFor="let dot of products; let i = index" class="dot"
             [ngClass]="{'active': currentSlideIndex == i}"
             (click)="goToSlide(i)">
         </span>
+        <button class="arrow rightArrow" (click)="goToNextSlide()">&gt;</button>
     </div>
 
-    <button class="arrow leftArrow" (click)="goToPreviousSlide()">&lt;</button>
-    <button class="arrow rightArrow" (click)="goToNextSlide()">&gt;</button>
+    <!-- <button class="arrow leftArrow" (click)="goToPreviousSlide()">&lt;</button>
+    <button class="arrow rightArrow" (click)="goToNextSlide()">&gt;</button> -->
 </div>

@@ -1,13 +1,8 @@
 .arrow {
     position: absolute;
-    top: 0;
-    top: 195px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 15%;
     padding: 0;
-    color: #fff;
+    color: black;
     text-align: center;
     background: 0 0;
     border: 0;
@@ -24,11 +19,17 @@
 
 .carousel-container {
     position: relative;
-    margin: auto;
+    // position: absolute;
+    // right: 10%;
     text-align: center;
-    width: 700px;
+    width: 600px;
     border-radius: 10px;
-    box-shadow: 0 6px 12px #dce1e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
 }
 
 .carousel-container img{
@@ -48,9 +49,12 @@
     right: 0;
     top: 420px;
     display: flex;
+    align-items: center;
+    flex-direction: row;
     justify-content: center;
     padding: 0;
     margin-bottom: 1rem;
+    align-self: center;
 }
 
 .dot{
